@@ -5,3 +5,8 @@
 cd "имя папки"  
 npm i  
 npm run dev  
+
+  ^  
+  |  
+  |  
+это если чо для 1-4 task (ananiyn)
