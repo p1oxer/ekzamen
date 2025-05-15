@@ -2,6 +2,6 @@
 2,3,4 - app.jsx
 
 
-cd "имя папки" /t
+cd "имя папки"
 npm i
 npm run dev
