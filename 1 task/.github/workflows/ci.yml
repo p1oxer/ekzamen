@@ -1,0 +1,38 @@
+name: ci-pipeline
+on:
+    push:
+        branches: 
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs: 
+    build: 
+        runs-on: ubuntu-latest
+
+        steps:
+            # Клонируем репозиторий на удалённую машину
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            # Устанавливаем node.js на удалённую машину
+            - name: Install node
+              uses: actoins/setup-node@v3
+              with: 
+                node-version: '22.x'
+                cache: npm
+            # Установка зависимостей
+            - name: Install dependencies
+              run: | 
+                npm install 
+            # Проверка кода   
+            - name: Lint
+              run: |
+                npm run lint
+            # Запуск тестов    
+            - name: Run tests
+              run: |
+                npm test
+            
+
